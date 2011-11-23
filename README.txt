@@ -6,7 +6,7 @@ Author: Simon de Turck
 Build Date: 2011-11-23
 Requirements: Symphony 2
 
-Extension home:
+Extension home: http://symphony-cms.com/download/extensions/view/80973/
 
 [Origin]
 
