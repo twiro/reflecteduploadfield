@@ -109,7 +109,7 @@ class extension_reflecteduploadfield extends Extension {
 				 `destination` varchar(255) NOT NULL,
 				 `validator` varchar(50),
 				 `expression` VARCHAR(255) DEFAULT NULL,
-				 `unique` tinyint(1) default '0'
+				 `unique` tinyint(1) default '0',
 				  PRIMARY KEY (`id`),
 				  KEY `field_id` (`field_id`)
 				) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;"
