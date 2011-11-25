@@ -11,7 +11,7 @@ Extension home: http://symphony-cms.com/download/extensions/view/80973/
 [Origin]
 
 This extension is a variation of the 'Unique Upload Field' extension by
-Michael Eichelsdoerfer...
+Michael Eichelsdoerfer and the "reflection field" by Rowan Lewis.
 
 [Installation]
 
