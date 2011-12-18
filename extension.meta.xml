@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="reflecteduploadfield" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+	<name>Reflected file upload</name>
+	<description>Name your files the way YOU want!</description>
+	<repo type="github">https://github.com/zimmen/reflecteduploadfield</repo>
+	<url type="discuss">http://symphony-cms.com/discuss/thread/80974/</url>
+	<types>
+		<type>Field Types</type>
+	</types>
+	<authors>
+		<author>
+			<name github="zimmen" symphony="Zimmen">Simon de Turck</name>
+			<website>http://www.zimmen.com</website>
+		</author>
+	</authors>
+	<releases>
+		<release version="1.0.1" date="2011-11-23" min="2.2.1" />
+	</releases>
+</extension>
