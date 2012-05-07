@@ -31,3 +31,4 @@ This field enables you to specify the naming expression using XPath (like in the
 
 1.0.1
 - Initial release
+- and just a little test
