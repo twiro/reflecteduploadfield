@@ -76,20 +76,6 @@ class extension_reflecteduploadfield extends Extension {
     ##### INSTANCE METHODS #####
     ############################
 
-    public function about() {
-        return array(
-            'name' => 'Field: Reflected File Upload' ,
-            'version' => '1.0.1' ,
-            'release-date' => '2011-11-23' ,
-            'author' => array(
-                'name' => 'Simon de Turck' ,
-                'website' => 'http://www.zimmen.com' ,
-                'email' => 'simon@zimmen.com'
-            ) ,
-            'description' => 'Upload files with names you can choose yourself, using reflection. Based on the uniqueupload and reflection fields'
-        );
-    }
-
     public function update($previousVersion) {
        if(version_compare($previousVersion, '1.0','<=')){
             Symphony::Database()->query("ALTER TABLE  `tbl_fields_reflectedupload` ADD  `unique` tinyint(1) default '0'");
