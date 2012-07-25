@@ -1,10 +1,10 @@
 Field: Reflected File Upload
 ------------------------------------------------------------------------------
 
-Version: 1.0.1
+Version: 1.1
 Author: Simon de Turck
 Build Date: 2011-11-23
-Requirements: Symphony 2
+Requirements: Symphony 2.3+
 
 Extension home: http://symphony-cms.com/download/extensions/view/80973/
 
