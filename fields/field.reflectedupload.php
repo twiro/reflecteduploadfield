@@ -88,6 +88,9 @@ class FieldReflectedUpload extends FieldUpload {
         $replacements = array();
 
         $old_value = $entry->getData($field_id);
+        if(empty($old_value['file'])){
+            return true;
+        }
         preg_match("/([^\/]*)(\.[^\.]+)/e" , $old_value['file'] , $oldMatches);
         $old_filename = $oldMatches[1];
         $file_extension = $oldMatches[2];
