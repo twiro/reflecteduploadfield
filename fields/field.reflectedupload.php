@@ -6,14 +6,14 @@ require_once(TOOLKIT . '/fields/field.upload.php');
 
 class FieldReflectedUpload extends FieldUpload {
 
-    public function __construct(&$parent) {
-        parent::__construct($parent);
+    public function __construct() {
+        parent::__construct();
         $this->_name = __('Reflected File Upload');
     }
 
     public function displaySettingsPanel(&$wrapper , $errors = null) {
         parent::displaySettingsPanel(&$wrapper , $errors);
-        
+
         $label = Widget::Label('Name Expression
         <i>To access the other fields, use XPath: <code>{entry/field-one} static text {entry/field-two}</code></i>');
         $label->appendChild(Widget::Input(
