@@ -40,7 +40,7 @@ class extension_reflecteduploadfield extends Extension {
 
         if (is_array($associated) and !empty($associated)) {
             foreach ($associated as $section => $count) {
-                $handle = Symphony::$Database->fetchVar('handle' , 0 , "
+                $handle = Symphony::Database()->fetchVar('handle' , 0 , "
                     SELECT s.handle FROM `tbl_sections` AS s
                     WHERE s.id = '{$section}'
                     LIMIT 1
