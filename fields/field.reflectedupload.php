@@ -129,7 +129,6 @@ class FieldReflectedUpload extends FieldUpload {
         $old = $abs_path . '/' . $old_filename . $file_extension;
         $new = $abs_path . '/' . $new_value;
         if (rename($old , $new)) {
-            $new_value = $new_value;
             // Save:
             $result = Symphony::Database()->update(
                 array(
