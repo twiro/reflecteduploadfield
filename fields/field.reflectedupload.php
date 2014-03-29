@@ -11,8 +11,8 @@ class FieldReflectedUpload extends FieldUpload {
         $this->_name = __('Reflected File Upload');
     }
 
-    public function displaySettingsPanel(&$wrapper , $errors = null) {
-        parent::displaySettingsPanel(&$wrapper , $errors);
+    public function displaySettingsPanel($wrapper , $errors = null) {
+        parent::displaySettingsPanel($wrapper , $errors);
 
         $label = Widget::Label('Name Expression
         <i>To access the other fields, use XPath: <code>{entry/field-one} static text {entry/field-two}</code></i>');
@@ -28,7 +28,7 @@ class FieldReflectedUpload extends FieldUpload {
         $wrapper->appendChild($setting);
     }
 
-    public function checkFields(&$errors , $checkForDuplicates = true) {
+    public function checkFields($errors , $checkForDuplicates = true) {
 
         $expression = $this->get('expression');
         if (empty($expression)) {
@@ -62,12 +62,12 @@ class FieldReflectedUpload extends FieldUpload {
         return preg_replace("/([^\/]*)(\.[^\.]+)$/e" , "substr('$1', 0, $crop).'-'.uniqid().'$2'" , $filename);
     }
 
-    public function checkPostFieldData($data , &$message , $entry_id = NULL) {
+    public function checkPostFieldData($data , $message , $entry_id = NULL) {
         extension_reflecteduploadfield::registerField($this);
         return self::__OK__;
     }
 
-    public function processRawFieldData($data, &$status, &$message=null, $simulate = false, $entry_id = NULL) {
+    public function processRawFieldData($data, $status, $message=null, $simulate = false, $entry_id = NULL) {
         if (is_array($data) and isset($data['name'])) $data['name'] = $this->getUniqueFilename($data['name']);
         return parent::processRawFieldData($data, $status, $message, $simulate, $entry_id);
     }
