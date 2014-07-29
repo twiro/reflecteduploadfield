@@ -77,8 +77,22 @@ class extension_reflecteduploadfield extends Extension {
     ############################
 
     public function update($previousVersion) {
-       if(version_compare($previousVersion, '1.0','<=')){
+    	
+        if(version_compare($previousVersion, '1.0','<=')){
             Symphony::Database()->query("ALTER TABLE  `tbl_fields_reflectedupload` ADD  `unique` tinyint(1) default '0'");
+        }
+        
+        // Before 1.2
+        if (version_compare($previous_version, '1.2', '<')) {
+            // Remove directory from the upload fields, fixes Symphony Issue #1719
+            $upload_tables = Symphony::Database()->fetchCol("field_id", "SELECT `field_id` FROM `tbl_fields_reflectedupload`");
+            
+            if(is_array($upload_tables) && !empty($upload_tables)) foreach($upload_tables as $field) {
+                Symphony::Database()->query(sprintf(
+                    "UPDATE tbl_entries_data_%d SET file = substring_index(file, '/', -1)",
+                    $field
+                ));
+             }
         }
     }
 
