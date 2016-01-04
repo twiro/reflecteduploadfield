@@ -1,9 +1,9 @@
 Field: Reflected File Upload
 ------------------------------------------------------------------------------
 
-Version: 1.1
+Version: 1.2
 Author: Simon de Turck
-Build Date: 2011-11-23
+Build Date: 2014-07-29
 Requirements: Symphony 2.3+
 
 Extension home: http://symphony-cms.com/download/extensions/view/80973/
@@ -28,6 +28,10 @@ Michael Eichelsdoerfer and the "reflection field" by Rowan Lewis.
 This field enables you to specify the naming expression using XPath (like in the reflection field). When uniqueness is important you can enable the "Always create unique name" option. This will add "Unique Upload Field" behavior by appending a unique token to the filename.
 
 [Changes]
+
+1.2
+- 2.3.3+ Compatibility (Separation of file names and file paths)
+- PHP 5.3+ Compatibility (Removed deprecated pass-by-reference arguments)
 
 1.1
 - 2.3 compatibility
