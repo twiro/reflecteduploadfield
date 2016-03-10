@@ -1,10 +1,10 @@
-All source code included in the "Field: Unique File Upload" Symphony
+All source code included in the „Reflected Upload Field“ Symphony
 Extension archive is, unless otherwise specified, released under the MIT
 licence as follows:
 
 ----- begin license block -----
 
-Copyright 2008-2011 Rowan Lewis, Michael Eichelsdoerfer, Simon de Turck
+Copyright 2008-2016 Rowan Lewis, Michael Eichelsdoerfer, Simon de Turck, Roman Klein
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

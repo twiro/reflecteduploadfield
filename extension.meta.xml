@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension id="reflecteduploadfield" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
-	<name>Reflected file upload</name>
-	<description>Name your files the way YOU want!</description>
-	<repo type="github">https://github.com/TwistedInteractive/reflecteduploadfield</repo>
+	<name>Reflected Upload Field</name>
+	<description>An upload field that dynamically renames files (based on values from other fields in the same entry).</description>
+	<repo type="github">https://github.com/twiro/reflecteduploadfield</repo>
 	<url type="discuss">http://www.getsymphony.com/discuss/thread/80974/</url>
 	<types>
 		<type>Field</type>
 	</types>
 	<authors>
 		<author>
+			<name github="twiro" symphony="roman">Roman Klein</name>
+			<website>http://romanklein.com</website>
+		</author>
+		<author>
 			<name github="zimmen" symphony="Zimmen">Simon de Turck</name>
 			<website>http://www.zimmen.com</website>
 		</author>
 	</authors>
 	<releases>
-		<release version="1.2" date="2014-07-29" min="2.3.3">
-			* Symphony 2.3.3 compatible
+		<release version="1.2" date="2016-03-10" min="2.3.3" max="2.5.x">
+			* Added compatibility with Symphony 2.3.3
 			* File Path no longer saved as part of the file name
+			* Updated readme and licence
 		</release>
 		<release version="1.1" date="2012-07-25" min="2.3.0" max="2.3.2">
-			* Symphony 2.3 compatible
+			* Added compatibility with Symphony 2.3.0
 			* Fix when removing a file and not picking a new one
 		</release>
 		<release version="1.0.1" date="2011-11-23" min="2.2.1" />
