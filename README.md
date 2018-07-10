@@ -1,6 +1,6 @@
-# Symphony CMS : Reflected Upload Field #
+# Reflected Upload Field
 
-An upload field that dynamically renames files (based on values from other fields in the same entry).
+#### An upload field for Symphony CMS that dynamically renames files (based on values from other fields in the same entry).
 
 ## 1. Installation
 
@@ -10,11 +10,19 @@ An upload field that dynamically renames files (based on values from other field
 3. You can now add the '**Reflected File Upload**' field to your sections.
 
 
-## 2. Configuration & Usage ##
+## 2. Field Settings
 
-This field enables you to specify the naming expression using XPath (like in the reflection field). When uniqueness is important you can enable the "Always create unique name" option. This will add "Unique Upload Field" behavior by appending a unique token to the filename.
+Compared to Symphony's default upload field **Reflected Upload Field** comes with the following two additional settings:
+
+1. **Expression** represents the "formula" that's used to generate the reflected filename. You can either use static text or access other fields of the current entry via XPath: <code>{//entry/field-one} static text {//entry/field-two}</code>.
+2. **Create unique filenames** gives you the option to add a unique token to the end of the generated filename. This random token will change whenever you save or resave an entry – so this option guarantees that the generated filenames won't get you into caching-troubles whenever you swap files in an entry.
 
 
 ## 3. Acknowledgements ##
 
-This extension is based on [Unique Upload Field](https://github.com/michael-e/uniqueuploadfield) and [Reflection Field](https://github.com/symphonists/reflectionfield).
+This extension was initially developed by [Simon de Turck][1] and is based on the extensions [Unique Upload Field][2] and [Reflection Field][3].
+
+
+[1]: https://github.com/zimmen
+[2]: https://github.com/michael-e/uniqueuploadfield
+[3]: https://github.com/symphonists/reflectionfield
