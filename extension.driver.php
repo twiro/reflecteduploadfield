@@ -10,7 +10,7 @@ class extension_reflecteduploadfield extends Extension
      * Name of the extension field table
      * @var string
      *
-     * @since version 2.1.0
+     * @since version 1.3.0
      */
 
     const FIELD_TBL_NAME = 'tbl_fields_reflectedupload';
