@@ -121,6 +121,24 @@ class FieldReflectedUpload extends FieldUpload
     /*------------------------------------------------------------------------*/
 
     /**
+     * CHECK POST FIELD DATA
+     *
+     * Check the field data that has been posted from a form. This will set the
+     * input message to the error message or to null if there is none.
+     * Any existing message value will be overwritten.
+     *
+     * http://www.getsymphony.com/learn/api/2.4/toolkit/fieldupload/#checkPostFieldData
+     *
+     * @since version 1.0.0
+     */
+
+    public function checkPostFieldData($data , &$message , $entry_id = NULL)
+    {
+        extension_reflecteduploadfield::registerField($this);
+        return self::__OK__;
+    }
+
+    /**
      * PROCESS RAW FIELD DATA
      *
      * http://www.getsymphony.com/learn/api/2.4/toolkit/fieldupload/#processRawFieldData
