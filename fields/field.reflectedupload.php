@@ -236,9 +236,10 @@ class FieldReflectedUpload extends FieldUpload
         if(empty($old_value['file'])){
             return true;
         }
-        preg_match("/([^\/]*)(\.[^\.]+)/e" , $old_value['file'] , $oldMatches);
-        $old_filename = $oldMatches[1];
-        $file_extension = $oldMatches[2];
+
+        // Fetch filename and extension from the old file
+        $old_filename = pathinfo($old_value['file'], PATHINFO_FILENAME);
+        $file_extension = pathinfo($old_value['file'], PATHINFO_EXTENSION);
 
         // Find queries:
         preg_match_all('/\{[^\}]+\}/' , $expression , $matches);
@@ -260,17 +261,17 @@ class FieldReflectedUpload extends FieldUpload
             $expression
         );
 
-        if($unique){
-            $new_value = $value . '-' .  uniqid() . $file_extension;
-        }else{
-            $new_value = $value . $file_extension;
+        if ($unique) {
+            $new_value = $value . '-' .  uniqid() . '.' . $file_extension;
+        } else {
+            $new_value = $value . '.' . $file_extension;
         }
         $new_value = Lang::createFilename($new_value);
 
         $abs_path = DOCROOT . '/' . trim($this->get('destination') , '/');
         $rel_path = str_replace('/workspace' , '' , $this->get('destination'));
 
-        $old = $abs_path . '/' . $old_filename . $file_extension;
+        $old = $abs_path . '/' . $old_filename . '.' . $file_extension;
         $new = $abs_path . '/' . $new_value;
 
         if (rename($old , $new)) {

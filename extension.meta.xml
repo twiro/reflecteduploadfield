@@ -16,8 +16,8 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="1.3.1" date="2019-03-13" min="2.4.x" max="2.7.x">
-			* Tested with PHP 7.2
+		<release version="1.3.1" date="2021-07-07" min="2.4.x" max="2.7.x">
+			* PHP 7.4 compatibility
 		</release>
 		<release version="1.3.0" date="2018-07-10" min="2.4.x" max="2.7.x">
 			* PHP7 compatibility
