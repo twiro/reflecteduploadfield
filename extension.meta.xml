@@ -12,10 +12,14 @@
 	<authors>
 		<author>
 			<name github="twiro" symphony="roman">Roman Klein</name>
-			<website>http://romanklein.com</website>
+			<website>https://romanklein.com</website>
 		</author>
 	</authors>
 	<releases>
+		<release version="1.3.2.beta" date="2021-07-07" min="2.4.x" max="2.7.x">
+			* Fixed broken error messages ([#13](https://github.com/twiro/reflecteduploadfield/issues/13))
+			* Removed obsolete function 'getUniqueFilename'
+		</release>
 		<release version="1.3.1" date="2021-07-07" min="2.4.x" max="2.7.x">
 			* PHP 7.4 compatibility
 		</release>

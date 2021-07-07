@@ -132,46 +132,16 @@ class FieldReflectedUpload extends FieldUpload
      * @since version 1.0.0
      */
 
-    public function checkPostFieldData($data , &$message , $entry_id = NULL)
+    public function checkPostFieldData($data, &$message, $entry_id = NULL)
     {
         extension_reflecteduploadfield::registerField($this);
-        return self::__OK__;
-    }
-
-    /**
-     * PROCESS RAW FIELD DATA
-     *
-     * http://www.getsymphony.com/learn/api/2.4/toolkit/fieldupload/#processRawFieldData
-     *
-     * @since version 1.0.0
-     */
-
-    public function processRawFieldData($data, &$status, &$message=null, $simulate = false, $entry_id = NULL)
-    {
+        // new file upload
         if (is_array($data) and isset($data['name'])) {
-            $data['name'] = $this->getUniqueFilename($data['name']);
+            return parent::checkPostFieldData($data, $message, $entry_id);
+        // existing file
+        } else {
+            return self::__OK__;
         }
-
-        return parent::processRawFieldData($data, $status, $message, $simulate, $entry_id);
-    }
-
-    /**
-     * GET UNIQUE FILENAME
-     *
-     * @since version 1.0.0
-     */
-
-    private static function getUniqueFilename($filename)
-    {
-        return preg_replace_callback(
-            '/([^\/]*)(\.[^\.]+)$/',
-            function ($m) {
-                // uniqid() is 13 bytes, so the unique filename will be limited to ($crop + 1 + 13) characters
-                $crop = '60';
-                return substr($m[1], 0, $crop) . '-' . uniqid() . $m[2];
-            },
-            $filename
-        );
     }
 
     /*------------------------------------------------------------------------*/
