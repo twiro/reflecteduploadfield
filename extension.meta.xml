@@ -16,7 +16,7 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="1.3.2.beta" date="2021-07-07" min="2.4.x" max="2.7.x">
+		<release version="1.3.2" date="2021-07-14" min="2.4.x" max="2.7.x">
 			* Fixed broken error messages ([#13](https://github.com/twiro/reflecteduploadfield/issues/13))
 			* Removed obsolete function 'getUniqueFilename'
 		</release>
