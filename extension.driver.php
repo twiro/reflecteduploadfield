@@ -142,7 +142,7 @@ class extension_reflecteduploadfield extends Extension
         }
 
         // updating from versions prior to 1.2
-        if (version_compare($previous_version, '1.2', '<')) {
+        if (version_compare($previousVersion, '1.2', '<')) {
 
             // Remove directory from the upload fields, fixes Symphony Issue #1719
             $upload_tables = Symphony::Database()->fetchCol("field_id", "SELECT `field_id` FROM `tbl_fields_reflectedupload`");
