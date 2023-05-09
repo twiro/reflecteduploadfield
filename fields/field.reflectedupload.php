@@ -57,7 +57,7 @@ class FieldReflectedUpload extends FieldUpload
         $label->appendChild($help);
 
         if (isset($errors['expression'])) {
-            $wrapper->appendChild(Widget::wrapFormElementWithError($label , $errors['expression']));
+            $wrapper->appendChild(Widget::Error($label , $errors['expression']));
         } else {
             $wrapper->appendChild($label);
         }
@@ -107,7 +107,11 @@ class FieldReflectedUpload extends FieldUpload
         $fields = array();
         $fields['field_id'] = $id;
         $fields['destination'] = $this->get('destination');
-        $fields['validator'] = ($fields['validator'] == 'custom' ? NULL : $this->get('validator'));
+        if (in_array('validator', $fields)) {
+            $fields['validator'] = ($fields['validator'] == 'custom' ? NULL : $this->get('validator'));
+        } else {
+            $fields['validator'] = $this->get('validator');
+        }
         $fields['expression'] = $this->get('expression');
         $fields['unique'] = $this->get('unique');
         $fields['unique'] = ($this->get('unique') ? 1 : 0);
